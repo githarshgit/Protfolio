@@ -4,7 +4,7 @@ import { Project } from './types';
 export const PROJECTS: Project[] = [
   {
     id: '01',
-    title: 'AIR_QUALITY_STATION',
+    title: 'PORTABLE_AIR_MONITORING_STATION',
     client: 'IoT Project',
     category: 'IOT / EMBEDDED',
     description: 'Portable multi-sensor monitoring station featuring a custom PCB-based 7-sensor array. Integrated Wi-Fi Access Point server for real-time JSON streaming and Flutter-based visualization.',
@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '02',
-    title: 'FACIAL_RECOGNITION_AI',
+    title: 'AI_ATTENDANCE_SYSTEM',
     client: 'AI/ML Project',
     category: 'MACHINE LEARNING',
     description: 'AI-powered attendance system using DeepFace for real-time facial recognition via webcam. Features role-based authentication and interactive Plotly dashboards.',
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '03',
-    title: 'HEALTH_WEARABLE',
+    title: 'WEARABLE_HEALTH_MONITORING_SYSTEM',
     client: 'Wearable Tech',
     category: 'WEARABLE TECH',
     description: 'Physiological data platform capturing ECG, EEG, and GSR. Developed MicroPython firmware for real-time sensor fusion and MQTT telemetry to a Flutter mobile interface.',
@@ -60,7 +60,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '05',
-    title: 'GARDENING_COMPANION',
+    title: 'SMART_GARDEN_COMPANION',
     client: 'IoT / AI',
     category: 'IOT / AI',
     description: 'ESP32-based IoT system with Python ML crop recommendation engine. Integrates WeatherAPI and OpenStreetMap for intelligent irrigation and environmental tracking.',

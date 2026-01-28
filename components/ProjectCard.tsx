@@ -43,15 +43,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center p-2 md:p-4"
             onClick={closeLightbox}
           >
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 p-3 bg-black border border-[#00FF41] text-[#00FF41] hover:bg-[#00FF41] hover:text-black transition-all z-10"
+              className="absolute top-2 right-2 md:top-4 md:right-4 p-2 md:p-3 bg-black border border-[#00FF41] text-[#00FF41] hover:bg-[#00FF41] hover:text-black transition-all z-10"
             >
-              <X size={24} />
+              <X size={20} />
             </button>
 
             {/* Navigation Arrows */}
@@ -59,15 +59,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               <>
                 <button
                   onClick={(e) => { e.stopPropagation(); prevImage(e); }}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black border border-[#00FF41] text-[#00FF41] hover:bg-[#00FF41] hover:text-black transition-all z-10"
+                  className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black border border-[#00FF41] text-[#00FF41] hover:bg-[#00FF41] hover:text-black transition-all z-10"
                 >
-                  <ChevronLeft size={24} />
+                  <ChevronLeft size={20} />
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); nextImage(e); }}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black border border-[#00FF41] text-[#00FF41] hover:bg-[#00FF41] hover:text-black transition-all z-10"
+                  className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black border border-[#00FF41] text-[#00FF41] hover:bg-[#00FF41] hover:text-black transition-all z-10"
                 >
-                  <ChevronRight size={24} />
+                  <ChevronRight size={20} />
                 </button>
               </>
             )}
@@ -76,13 +76,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             <img
               src={project.images[currentImageIndex]}
               alt={`${project.title} - Image ${currentImageIndex + 1}`}
-              className="max-w-full max-h-[90vh] object-contain"
+              className="max-w-full max-h-[85vh] object-contain"
               onClick={(e) => e.stopPropagation()}
             />
 
             {/* Image Counter */}
             {project.images.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-black border border-[#00FF41] font-terminal text-sm text-[#00FF41]">
+              <div className="absolute bottom-2 md:bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 md:px-4 md:py-2 bg-black border border-[#00FF41] font-terminal text-xs md:text-sm text-[#00FF41]">
                 {currentImageIndex + 1} / {project.images.length}
               </div>
             )}
@@ -92,39 +92,39 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
       {/* Project Card */}
       <motion.div
-        initial={{ opacity: 0, x: -50 }}
+        initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ delay: index * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         viewport={{ once: true }}
         className={`border-b border-[#00FF41]/30 group transition-all duration-500 overflow-hidden ${isExpanded ? 'bg-[#00FF41]/5' : ''}`}
       >
         <div
           onClick={() => setIsExpanded(!isExpanded)}
-          className="p-4 md:p-6 cursor-pointer flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+          className="p-3 md:p-6 cursor-pointer flex items-center justify-between gap-3 md:gap-4"
         >
-          <div className="flex items-center gap-4">
-            <span className="font-terminal text-[#00FF41]/50 text-sm">#{project.id}</span>
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <span className={`text-[10px] font-terminal border px-2 py-0.5 ${project.status === 'IN_PROGRESS' ? 'border-yellow-500 text-yellow-500' :
+          <div className="flex items-center gap-2 md:gap-4 min-w-0 flex-1">
+            <span className="font-terminal text-[#00FF41]/50 text-xs md:text-sm shrink-0">#{project.id}</span>
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2 mb-1 md:mb-2">
+                <span className={`text-[8px] md:text-[10px] font-terminal border px-1.5 md:px-2 py-0.5 shrink-0 ${project.status === 'IN_PROGRESS' ? 'border-yellow-500 text-yellow-500' :
                   'border-[#00FF41] text-[#00FF41]'
                   }`}>
                   {project.status}
                 </span>
-                <span className="text-[10px] font-terminal text-[#00FF41]/50 uppercase tracking-widest">{project.category}</span>
+                <span className="text-[8px] md:text-[10px] font-terminal text-[#00FF41]/50 uppercase tracking-wider truncate">{project.category}</span>
               </div>
-              <h3 className="font-brutalist text-xl md:text-2xl font-black group-hover:text-white transition-colors duration-300">
+              <h3 className="font-brutalist text-sm md:text-2xl font-black group-hover:text-white transition-colors duration-300 break-words">
                 {project.title}
               </h3>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4 shrink-0">
             <span className="hidden md:block font-terminal text-sm opacity-0 group-hover:opacity-100 transition-opacity">
               {isExpanded ? 'CLOSE' : 'VIEW'}
             </span>
-            <div className={`p-3 border border-[#00FF41] rounded-full transition-transform duration-500 ${isExpanded ? 'rotate-90 bg-[#00FF41] text-black' : ''}`}>
-              <Eye size={16} />
+            <div className={`p-2 md:p-3 border border-[#00FF41] rounded-full transition-transform duration-500 ${isExpanded ? 'rotate-90 bg-[#00FF41] text-black' : ''}`}>
+              <Eye size={14} />
             </div>
           </div>
         </div>
@@ -136,10 +136,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="px-4 md:px-6 pb-6"
+              className="px-3 md:px-6 pb-4 md:pb-6"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="space-y-4">
+              <div className="flex flex-col gap-4 md:gap-6">
+                <div className="space-y-3 md:space-y-4">
                   {/* Image Carousel - Click to open lightbox */}
                   <div
                     className="relative group/img overflow-hidden border border-[#00FF41]/20 cursor-zoom-in"
@@ -151,8 +151,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                       className="w-full aspect-video object-cover"
                     />
 
-                    {/* Tap to expand hint */}
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                    {/* Tap to expand hint - only on desktop */}
+                    <div className="hidden md:flex absolute inset-0 bg-black/30 opacity-0 group-hover/img:opacity-100 transition-opacity items-center justify-center">
                       <span className="font-terminal text-white text-sm bg-black/70 px-3 py-1 border border-white/30">
                         TAP TO EXPAND
                       </span>
@@ -163,19 +163,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                       <>
                         <button
                           onClick={prevImage}
-                          className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/70 border border-[#00FF41] text-[#00FF41] hover:bg-[#00FF41] hover:text-black transition-all"
+                          className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 p-1.5 md:p-2 bg-black/70 border border-[#00FF41] text-[#00FF41] hover:bg-[#00FF41] hover:text-black transition-all"
                         >
-                          <ChevronLeft size={20} />
+                          <ChevronLeft size={16} />
                         </button>
                         <button
                           onClick={nextImage}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/70 border border-[#00FF41] text-[#00FF41] hover:bg-[#00FF41] hover:text-black transition-all"
+                          className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 p-1.5 md:p-2 bg-black/70 border border-[#00FF41] text-[#00FF41] hover:bg-[#00FF41] hover:text-black transition-all"
                         >
-                          <ChevronRight size={20} />
+                          <ChevronRight size={16} />
                         </button>
 
                         {/* Image Counter */}
-                        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-black/70 border border-[#00FF41]/50 font-terminal text-xs text-[#00FF41]">
+                        <div className="absolute bottom-1 md:bottom-2 left-1/2 -translate-x-1/2 px-2 py-0.5 md:px-3 md:py-1 bg-black/70 border border-[#00FF41]/50 font-terminal text-[10px] md:text-xs text-[#00FF41]">
                           {currentImageIndex + 1} / {project.images.length}
                         </div>
                       </>
@@ -184,40 +184,32 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
                   {/* Image Dots */}
                   {project.images.length > 1 && (
-                    <div className="flex justify-center gap-2">
+                    <div className="flex justify-center gap-1.5 md:gap-2">
                       {project.images.map((_, idx) => (
                         <button
                           key={idx}
                           onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
-                          className={`w-2 h-2 rounded-full transition-all ${idx === currentImageIndex ? 'bg-[#00FF41] w-4' : 'bg-[#00FF41]/30'}`}
+                          className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all ${idx === currentImageIndex ? 'bg-[#00FF41] w-3 md:w-4' : 'bg-[#00FF41]/30'}`}
                         />
                       ))}
                     </div>
                   )}
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 md:gap-2">
                     {project.tags.map(tag => (
-                      <span key={tag} className="font-terminal text-xs bg-[#00FF41]/10 px-3 py-1 text-[#00FF41]">#{tag}</span>
+                      <span key={tag} className="font-terminal text-[10px] md:text-xs bg-[#00FF41]/10 px-2 md:px-3 py-0.5 md:py-1 text-[#00FF41]">#{tag}</span>
                     ))}
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-between py-4">
-                  <div className="space-y-6">
-                    <div className="flex items-center gap-2 text-[#00FF41] font-terminal text-xs uppercase tracking-tighter">
-                      <FileText size={14} />
-                      <span>Description</span>
-                    </div>
-                    <p className="font-ui text-base md:text-lg text-gray-400 leading-relaxed font-light">
-                      {project.description}
-                    </p>
+                <div className="space-y-3 md:space-y-6">
+                  <div className="flex items-center gap-2 text-[#00FF41] font-terminal text-[10px] md:text-xs uppercase tracking-tighter">
+                    <FileText size={12} />
+                    <span>Description</span>
                   </div>
-
-                  <div className="pt-6">
-                    <button className="group/btn flex items-center gap-3 font-terminal text-xs border-2 border-[#00FF41] px-6 py-3 hover:bg-[#00FF41] hover:text-black transition-all">
-                      VIEW PROJECT <ChevronRight size={14} className="group-hover/btn:translate-x-2 transition-transform" />
-                    </button>
-                  </div>
+                  <p className="font-ui text-sm md:text-lg text-gray-400 leading-relaxed font-light">
+                    {project.description}
+                  </p>
                 </div>
               </div>
             </motion.div>
