@@ -12,7 +12,8 @@ import { PROJECTS } from './constants';
 const SOCIAL_LINKS = {
   github: 'https://github.com/githarshgit',
   linkedin: 'https://linkedin.com/in/harshkumar-ison-linked-in',
-  email: 'mailto:connectwithharshkumar@gmail.com'
+  email: 'mailto:connectwithharshkumar@gmail.com',
+  resume: '/Resume1.pdf'
 };
 
 const Navbar: React.FC = () => {
@@ -80,6 +81,9 @@ const Navbar: React.FC = () => {
           </a>
           <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-2">
             <Linkedin size={14} /> LINKEDIN
+          </a>
+          <a href={SOCIAL_LINKS.resume} target="_blank" rel="noopener noreferrer" className="hover:underline">
+            RESUME
           </a>
         </div>
       </motion.div>
@@ -219,6 +223,14 @@ const Footer: React.FC = () => {
               className="bg-[#00FF41] text-black font-terminal font-bold px-6 md:px-8 py-3 md:py-4 uppercase tracking-widest hover:scale-105 transition-transform inline-flex items-center justify-center gap-2 text-sm"
             >
               <Mail size={16} /> Contact Me
+            </a>
+            <a
+              href={SOCIAL_LINKS.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[#00FF41] text-[#00FF41] font-terminal font-bold px-6 md:px-8 py-3 md:py-4 uppercase tracking-widest hover:bg-[#00FF41]/10 transition-all text-center text-sm"
+            >
+              Download Resume
             </a>
           </div>
         </div>
