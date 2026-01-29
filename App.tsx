@@ -13,7 +13,7 @@ const SOCIAL_LINKS = {
   github: 'https://github.com/githarshgit',
   linkedin: 'https://linkedin.com/in/harshkumar-ison-linked-in',
   email: 'mailto:connectwithharshkumar@gmail.com',
-  resume: '/Resume1.pdf'
+  resume: 'Resume1.pdf'
 };
 
 const Navbar: React.FC = () => {
