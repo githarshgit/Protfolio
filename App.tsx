@@ -12,8 +12,7 @@ import { PROJECTS } from './constants';
 const SOCIAL_LINKS = {
   github: 'https://github.com/githarshgit',
   linkedin: 'https://linkedin.com/in/harshkumar-ison-linked-in',
-  email: 'mailto:connectwithharshkumar@gmail.com',
-  resume: '/resume.pdf'
+  email: 'mailto:connectwithharshkumar@gmail.com'
 };
 
 const Navbar: React.FC = () => {
@@ -21,10 +20,12 @@ const Navbar: React.FC = () => {
 
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
@@ -79,9 +80,6 @@ const Navbar: React.FC = () => {
           </a>
           <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-2">
             <Linkedin size={14} /> LINKEDIN
-          </a>
-          <a href={SOCIAL_LINKS.resume} target="_blank" rel="noopener noreferrer" className="hover:underline">
-            RESUME
           </a>
         </div>
       </motion.div>
@@ -222,14 +220,6 @@ const Footer: React.FC = () => {
             >
               <Mail size={16} /> Contact Me
             </a>
-            <a
-              href={SOCIAL_LINKS.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-[#00FF41] text-[#00FF41] font-terminal font-bold px-6 md:px-8 py-3 md:py-4 uppercase tracking-widest hover:bg-[#00FF41]/10 transition-all text-center text-sm"
-            >
-              Download Resume
-            </a>
           </div>
         </div>
 
@@ -237,9 +227,9 @@ const Footer: React.FC = () => {
           <div className="space-y-3 md:space-y-4">
             <h5 className="text-[#00FF41] font-bold">NAVIGATE</h5>
             <ul className="space-y-2 text-gray-500">
-              <li><a href="#hero" className="hover:text-white transition-colors">HOME</a></li>
-              <li><a href="#projects" className="hover:text-white transition-colors">PROJECTS</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">CONTACT</a></li>
+              <li><button onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">HOME</button></li>
+              <li><button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">PROJECTS</button></li>
+              <li><button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors">CONTACT</button></li>
             </ul>
           </div>
           <div className="space-y-3 md:space-y-4">
