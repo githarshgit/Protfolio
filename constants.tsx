@@ -4,7 +4,7 @@ import { Project } from './types';
 export const PROJECTS: Project[] = [
   {
     id: '01',
-    title: 'PORTABLE_AIR_MONITORING_STATION',
+    title: 'PORTABLE AIR MONITORING STATION',
     client: 'IoT Project',
     category: 'IOT / EMBEDDED',
     description: 'Portable multi-sensor monitoring station featuring a custom PCB-based 7-sensor array. Integrated Wi-Fi Access Point server for real-time JSON streaming and Flutter-based visualization.',
@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '02',
-    title: 'AI_ATTENDANCE_SYSTEM',
+    title: 'AI ATTENDANCE SYSTEM',
     client: 'AI/ML Project',
     category: 'MACHINE LEARNING',
     description: 'AI-powered attendance system using DeepFace for real-time facial recognition via webcam. Features role-based authentication and interactive Plotly dashboards.',
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '03',
-    title: 'WEARABLE_HEALTH_MONITORING_SYSTEM',
+    title: 'WEARABLE HEALTH MONITORING SYSTEM',
     client: 'Wearable Tech',
     category: 'WEARABLE TECH',
     description: 'Physiological data platform capturing ECG, EEG, and GSR. Developed MicroPython firmware for real-time sensor fusion and MQTT telemetry to a Flutter mobile interface.',
@@ -47,7 +47,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '04',
-    title: 'DRONE_FREQUENCY_HOPPING',
+    title: 'DRONE FREQUENCY HOPPING',
     client: 'RF Communications',
     category: 'AEROSPACE LOGIC',
     description: 'Developed a bidirectional NRF24L01 communication system with dynamic frequency hopping (1-50 channels) to ensure robust data transmission in contested RF environments.',
@@ -56,11 +56,11 @@ export const PROJECTS: Project[] = [
       '/projects/drone/2.jpg'
     ],
     tags: ['Raspberry Pi', 'CircuitPython', 'NRF24L01', 'GPS'],
-    status: 'IN_PROGRESS'
+    status: 'COMPLETED'
   },
   {
     id: '05',
-    title: 'SMART_GARDEN_COMPANION',
+    title: 'SMART GARDEN COMPANION',
     client: 'IoT / AI',
     category: 'IOT / AI',
     description: 'ESP32-based IoT system with Python ML crop recommendation engine. Integrates WeatherAPI and OpenStreetMap for intelligent irrigation and environmental tracking.',
