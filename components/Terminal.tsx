@@ -8,7 +8,7 @@ import { TerminalMessage } from '../types';
 const Terminal: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<TerminalMessage[]>([
-    { type: 'system', content: 'INITIALIZING CYBER-COUTURE CORE v1.0.4...', timestamp: new Date().toLocaleTimeString() },
+    { type: 'system', content: 'INITIALIZING.....', timestamp: new Date().toLocaleTimeString() },
     { type: 'system', content: 'AUTH_LEVEL: GUEST. COMMANDS: help, info, contact, exit', timestamp: new Date().toLocaleTimeString() }
   ]);
   const [input, setInput] = useState('');

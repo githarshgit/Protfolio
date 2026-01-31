@@ -109,26 +109,24 @@ const Hero: React.FC = () => {
 
         <div className="relative w-full flex flex-col items-center">
           {/* Hi There - Hidden on mobile to avoid clutter */}
-          <div className="hidden md:block relative group">
-            <div className="absolute -top-24 -left-0 flex flex-col gap-2 pointer-events-none">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="flex items-center gap-2 font-brutalist text-3xl font-black tracking-tighter text-left"
-              >
-                <div className="w-12 h-10 bg-[#00FF41] flex items-center justify-center text-black">Hi</div>
-                <span className="text-[#00FF41]">There,</span>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 }}
-                className="flex items-center gap-2 font-brutalist text-3xl font-black tracking-tighter ml-12 text-left"
-              >
-                <div className="w-10 h-10 bg-[#00FF41] flex items-center justify-center text-black">I</div>
-                <span className="text-[#00FF41]">'m</span>
-              </motion.div>
-            </div>
+          <div className="hidden md:flex flex-col gap-2 mb-6 self-start max-w-screen-xl w-full pl-4 lg:pl-0">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center gap-2 font-brutalist text-2xl lg:text-3xl font-black tracking-tighter text-left"
+            >
+              <div className="w-10 lg:w-12 h-8 lg:h-10 bg-[#00FF41] flex items-center justify-center text-black text-sm lg:text-base">Hi</div>
+              <span className="text-[#00FF41]">There,</span>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 }}
+              className="flex items-center gap-2 font-brutalist text-2xl lg:text-3xl font-black tracking-tighter ml-8 lg:ml-12 text-left"
+            >
+              <div className="w-8 lg:w-10 h-8 lg:h-10 bg-[#00FF41] flex items-center justify-center text-black text-sm lg:text-base">I</div>
+              <span className="text-[#00FF41]">'m</span>
+            </motion.div>
           </div>
 
           {/* Mobile greeting */}
