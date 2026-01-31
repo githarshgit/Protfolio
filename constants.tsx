@@ -36,18 +36,18 @@ export const PROJECTS: Project[] = [
     category: 'WEARABLE TECH',
     description: 'Physiological data platform capturing ECG, EEG, and GSR. Developed MicroPython firmware for real-time sensor fusion and MQTT telemetry to a Flutter mobile interface.',
     images: [
-      'public/projects/hms/20250907_200928.jpg',
-      'public/projects/hms/20250907_201541.jpg',
-      'public/projects/hms/20250907_205432.jpg',
-      'public/projects/hms/20250907_205517.jpg',
-      'public/projects/hms/20250907_205635.jpg'
+      '/projects/hms/20250907_200928.jpg',
+      '/projects/hms/20250907_201541.jpg',
+      '/projects/hms/20250907_205432.jpg',
+      '/projects/hms/20250907_205517.jpg',
+      '/projects/hms/20250907_205635.jpg'
     ],
     tags: ['MicroPython', 'MQTT', 'Arduino Nano', 'Custom PCB'],
     status: 'COMPLETED'
   },
   {
 
-    
+
     id: '04',
     title: 'DRONE FREQUENCY HOPPING',
     client: 'RF Communications',
