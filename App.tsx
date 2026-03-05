@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center items-center relative px-4 md:px-6 overflow-hidden pt-24 md:pt-32">
+    <section id="hero" className="min-h-screen flex flex-col justify-center items-center relative px-4 md:px-6 overflow-hidden pt-24 md:pt-32 pb-16 md:pb-24">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-10 pointer-events-none">
         <div className="w-full h-full bg-[radial-gradient(circle_at_center,_#00FF41_0%,_transparent_70%)]"></div>
       </div>

@@ -7,42 +7,48 @@ export const PROJECTS: Project[] = [
     title: 'PORTABLE AIR MONITORING STATION',
     client: 'IoT Project',
     category: 'IOT / EMBEDDED',
-    description: 'Portable multi-sensor monitoring station featuring a custom PCB-based 7-sensor array. Integrated Wi-Fi Access Point server for real-time JSON streaming and Flutter-based visualization.',
+    description: 'A field-deployable environmental sensing device built around a custom PCB housing 7 sensors to measure particulate matter, toxic gases, noise, and climate conditions. Streams live JSON data over Wi-Fi, logs offline to SD card, and pairs with a Flutter app featuring real-time AQI dashboards and pollutant trend visualization — all housed in a purpose-designed 3D-printed enclosure.',
     images: [
-      '/Portfolio/projects/air-quality/1.jpg',
-      '/Portfolio/projects/air-quality/2.jpg',
-      '/Portfolio/projects/air-quality/3.jpg'
+      '/projects/AQMS/AQMS1.jpg',
+      '/projects/AQMS/AQMS2.jpg',
+      '/projects/AQMS/AQMS3.jpg',
+      '/projects/AQMS/Screenshot_1.png',
+      '/projects/AQMS/Screenshot_2.png',
+      '/projects/AQMS/Screenshot_3.png'
     ],
     tags: ['Arduino Nano RP2040', 'Custom PCB', 'Flutter', '3D Printing'],
+    githubUrl: 'https://github.com/githarshgit/air360.git',
     status: 'COMPLETED'
   },
   {
     id: '02',
-    title: 'AI ATTENDANCE SYSTEM',
-    client: 'AI/ML Project',
-    category: 'MACHINE LEARNING',
-    description: 'AI-powered attendance system using DeepFace for real-time facial recognition via webcam. Features role-based authentication and interactive Plotly dashboards.',
+    title: 'WEARABLE HEALTH MONITORING SYSTEM',
+    client: 'Wearable Tech',
+    category: 'WEARABLE TECH',
+    description: 'A custom-built wearable that captures ECG, EEG, GSR, and body temperature through a bespoke PCB and Arduino Nano RP2040. MicroPython firmware handles real-time sensor fusion and MQTT cloud telemetry, while a companion Flutter app renders live physiological waveforms and heart rate variability analysis in a 3D-printed ergonomic form factor.',
     images: [
-      '/Portfolio/projects/facial-recognition/1.jpg',
-      '/Portfolio/projects/facial-recognition/2.jpg'
+      '/projects/hms/20250907_200928.jpg',
+      '/projects/hms/20250907_201541.jpg',
+      '/projects/hms/20250907_205432.jpg',
+      '/projects/hms/20250907_205517.jpg',
+      '/projects/hms/20250907_205635.jpg'
     ],
-    tags: ['Flask', 'OpenCV', 'DeepFace', 'Firebase'],
+    tags: ['MicroPython', 'MQTT', 'Arduino Nano', 'Custom PCB'],
+    githubUrl: 'git@github.com:githarshgit/hms360.git',
     status: 'COMPLETED'
   },
   {
     id: '03',
-    title: 'WEARABLE HEALTH MONITORING SYSTEM',
-    client: 'Wearable Tech',
-    category: 'WEARABLE TECH',
-    description: 'Physiological data platform capturing ECG, EEG, and GSR. Developed MicroPython firmware for real-time sensor fusion and MQTT telemetry to a Flutter mobile interface.',
+    title: 'AI ATTENDANCE SYSTEM',
+    client: 'AI/ML Project',
+    category: 'MACHINE LEARNING',
+    description: 'An intelligent web-based platform that automates attendance tracking using real-time facial recognition. Built with Flask and DeepFace, it supports role-based access for admins, lecturers, and students, while delivering rich analytics dashboards with interactive charts for attendance trends, gender distributions, and enrollment insights.',
     images: [
-      '/Portfolio/projects/hms/20250907_200928.jpg',
-      '/Portfolio/projects/hms/20250907_201541.jpg',
-      '/Portfolio/projects/hms/20250907_205432.jpg',
-      '/Portfolio/projects/hms/20250907_205517.jpg',
-      '/Portfolio/projects/hms/20250907_205635.jpg'
+      '/projects/facial-recognition/1.jpg',
+      '/projects/facial-recognition/2.jpg'
     ],
-    tags: ['MicroPython', 'MQTT', 'Arduino Nano', 'Custom PCB'],
+    tags: ['Flask', 'OpenCV', 'DeepFace', 'Firebase'],
+    githubUrl: 'https://github.com/githarshgit/AI-Attendance',
     status: 'COMPLETED'
   },
   {
@@ -52,12 +58,13 @@ export const PROJECTS: Project[] = [
     title: 'DRONE FREQUENCY HOPPING',
     client: 'RF Communications',
     category: 'AEROSPACE LOGIC',
-    description: 'Developed a bidirectional NRF24L01 communication system with dynamic frequency hopping (1-50 channels) to ensure robust data transmission in contested RF environments.',
+    description: 'A robust anti-jamming telemetry system for drones using bidirectional NRF24L01 radio modules across Raspberry Pi nodes. Features GPIO-triggered dynamic frequency hopping across 50 channels with sub-millisecond latency, and parses live NMEA GPS data for precise real-time coordinate transmission in contested RF environments.',
     images: [
-      '/Portfolio/projects/drone/1.jpg',
-      '/Portfolio/projects/drone/2.jpg'
+      'https://raw.githubusercontent.com/githarshgit/Drone-Frequency-Hopping/main/img/rx.jpg',
+      'https://raw.githubusercontent.com/githarshgit/Drone-Frequency-Hopping/main/img/tx.jpg'
     ],
     tags: ['Raspberry Pi', 'CircuitPython', 'NRF24L01', 'GPS'],
+    githubUrl: 'https://github.com/githarshgit/Drone-Telemetry',
     status: 'COMPLETED'
   },
   {
@@ -65,12 +72,13 @@ export const PROJECTS: Project[] = [
     title: 'SMART GARDEN COMPANION',
     client: 'IoT / AI',
     category: 'IOT / AI',
-    description: 'ESP32-based IoT system with Python ML crop recommendation engine. Integrates WeatherAPI and OpenStreetMap for intelligent irrigation and environmental tracking.',
+    description: 'An AI-powered plant health platform combining ESP32 IoT hardware with soil moisture, humidity, and NPK sensors for weather-aware smart irrigation. Integrates a Python ML crop recommendation engine, OpenStreetMap geolocation, a Railway-hosted REST backend, and a Flutter app with live sensor dashboards and an LLM-powered gardening chatbot.',
     images: [
-      '/Portfolio/projects/gardening/1.jpg',
-      '/Portfolio/projects/gardening/2.jpg'
+      '/projects/gardening/1.jpg',
+      '/projects/gardening/2.jpg'
     ],
     tags: ['ESP32', 'Python ML', 'Flutter', 'Railway'],
+    githubUrl: 'https://github.com/githarshgit/Smart-Garden',
     status: 'COMPLETED'
   }
 ];

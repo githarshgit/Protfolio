@@ -7,6 +7,7 @@ export interface Project {
   description: string;
   images: string[];  // Array of image paths
   tags: string[];
+  githubUrl?: string;
   status: 'COMPLETED' | 'IN_PROGRESS' | 'ARCHIVED';
 }
 

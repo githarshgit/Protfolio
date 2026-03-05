@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Project } from '../types';
-import { FileText, ChevronRight, ChevronLeft, Eye, X } from 'lucide-react';
+import { FileText, ChevronRight, ChevronLeft, Eye, X, Github } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
@@ -148,7 +148,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                     <img
                       src={project.images[currentImageIndex]}
                       alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                      className="w-full aspect-video object-cover"
+                      className="w-full h-[300px] md:h-[500px] object-contain bg-black/50"
                     />
 
                     {/* Tap to expand hint - only on desktop */}
@@ -203,9 +203,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 </div>
 
                 <div className="space-y-3 md:space-y-6">
-                  <div className="flex items-center gap-2 text-[#00FF41] font-terminal text-[10px] md:text-xs uppercase tracking-tighter">
-                    <FileText size={12} />
-                    <span>Description</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-[#00FF41] font-terminal text-[10px] md:text-xs uppercase tracking-tighter">
+                      <FileText size={12} />
+                      <span>Description</span>
+                    </div>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-3 py-1 border border-[#00FF41] text-[#00FF41] font-terminal text-[10px] md:text-xs hover:bg-[#00FF41] hover:text-black transition-all"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <Github size={12} />
+                        GITHUB
+                      </a>
+                    )}
                   </div>
                   <p className="font-ui text-sm md:text-lg text-gray-400 leading-relaxed font-light">
                     {project.description}
